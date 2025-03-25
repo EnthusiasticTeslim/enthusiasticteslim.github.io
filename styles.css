@@ -17,7 +17,10 @@
   --highlight-color-light: rgba(52, 152, 219, 0.1);
   --highlight-text-light: #2980b9;
   --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
-  
+  --about-bg-light: #f9fafc; /* Soft off-white */
+  --publications-bg-light: #f5f8f5; /* Light green tint */
+  --news-bg-light: #fef9f5; /* Light peach tint */
+
   /* Dark mode variables */
   --main-color-dark: #e0e0e0;
   --secondary-color-dark: #b0b0b0;
@@ -33,7 +36,10 @@
   --highlight-color-dark: rgba(100, 181, 246, 0.2);
   --highlight-text-dark: #90caf9;
   --shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
-  
+  --about-bg-dark: #1c2526; /* Dark teal-gray */
+  --publications-bg-dark: #252b25; /* Dark green-gray */
+  --news-bg-dark: #2b2523; /* Dark reddish-gray */
+
   /* Shared structure variables */
   --sidebar-width: 300px;
   --content-width: calc(100% - var(--sidebar-width) - 60px);
@@ -58,6 +64,9 @@
   --highlight-color: var(--highlight-color-light);
   --highlight-text: var(--highlight-text-light);
   --shadow: var(--shadow-light);
+  --about-bg: var(--about-bg-light);
+  --publications-bg: var(--publications-bg-light);
+  --news-bg: var(--news-bg-light);
 }
 
 /* Dark theme class */
@@ -76,6 +85,9 @@
   --highlight-color: var(--highlight-color-dark);
   --highlight-text: var(--highlight-text-dark);
   --shadow: var(--shadow-dark);
+  --about-bg: var(--about-bg-dark);
+  --publications-bg: var(--publications-bg-dark);
+  --news-bg: var(--news-bg-dark);
 }
 
 /* Base styles */
@@ -261,6 +273,37 @@ a:hover, a:focus {
   background-color: rgba(52, 152, 219, 0.05);
 }
 
+/* Education Section in Sidebar */
+.education {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.education h3 {
+  font-size: 18px;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+}
+
+.education ul {
+  list-style: none;
+  padding: 0;
+}
+
+.education li {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.education li strong {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
 .social-links {
   display: flex;
   justify-content: center;
@@ -309,6 +352,29 @@ a:hover, a:focus {
 .section {
   margin-bottom: 80px;
   position: relative;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+/* Section-specific background colors */
+#about {
+  background-color: var(--about-bg);
+}
+
+#education {
+  background-color: var(--about-bg); /* Reusing about-bg for consistency */
+}
+
+#experiences {
+  background-color: var(--about-bg); /* Reusing about-bg for consistency */
+}
+
+#publications {
+  background-color: var(--publications-bg);
+}
+
+#news {
+  background-color: var(--news-bg);
 }
 
 .section-title {
@@ -356,6 +422,175 @@ a:hover, a:focus {
   margin: 10px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   border-left: 3px solid var(--accent-color);
+}
+
+/* Custom highlight colors for links */
+.highlight-red {
+  color: #e74c3c; /* Red color for resume */
+  background-color: rgba(231, 76, 60, 0.1); /* Light red background */
+  padding: 2px 6px; /* Small padding for highlight effect */
+  border-radius: 4px; /* Rounded corners */
+  transition: all var(--transition-speed) ease;
+}
+
+.highlight-red:hover {
+  color: #c0392b; /* Darker red on hover */
+  background-color: rgba(231, 76, 60, 0.2);
+}
+
+.highlight-green {
+  color: #27ae60; /* Green color for interest */
+  background-color: rgba(39, 174, 96, 0.1); /* Light green background */
+  padding: 2px 6px; /* Small padding for highlight effect */
+  border-radius: 4px; /* Rounded corners */
+  transition: all var(--transition-speed) ease;
+}
+
+.highlight-green:hover {
+  color: #219653; /* Darker green on hover */
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
+.highlight-orange {
+  color: #e67e22; /* Orange color */
+  background-color: rgba(230, 126, 34, 0.1); /* Light orange background */
+  padding: 2px 6px; /* Small padding for highlight effect */
+  border-radius: 4px; /* Rounded corners */
+  transition: all var(--transition-speed) ease;
+}
+
+.highlight-orange:hover {
+  color: #d35400; /* Darker orange on hover */
+  background-color: rgba(230, 126, 34, 0.2);
+}
+
+/* Ensure links in highlight div don't get the default underline effect */
+.highlight a {
+  text-decoration: none; /* Remove default underline */
+}
+
+/* Dark theme adjustments for custom highlights */
+.dark-theme .highlight-red {
+  color: #ff6b6b; /* Lighter red for dark mode */
+  background-color: rgba(255, 107, 107, 0.2);
+}
+
+.dark-theme .highlight-red:hover {
+  color: #ff8787;
+  background-color: rgba(255, 107, 107, 0.3);
+}
+
+.dark-theme .highlight-green {
+  color: #2ecc71; /* Lighter green for dark mode */
+  background-color: rgba(46, 204, 113, 0.2);
+}
+
+.dark-theme .highlight-green:hover {
+  color: #54d98c;
+  background-color: rgba(46, 204, 113, 0.3);
+}
+
+.dark-theme .highlight-orange {
+  color: #f39c12; /* Lighter orange for dark mode */
+  background-color: rgba(243, 156, 18, 0.2);
+}
+
+.dark-theme .highlight-orange:hover {
+  color: #f1c40f;
+  background-color: rgba(243, 156, 18, 0.3);
+}
+
+/* Education Section Styling */
+#education ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#education li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#education li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#education li strong {
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+/* Affiliation Logos in Education Section */
+.affiliation-logo {
+  width: 50px; /* Larger size */
+  height: 50px;
+  vertical-align: middle; /* Aligns logo with university name */
+  margin-left: 15px; /* Space between university name and logo */
+  margin-right: 5px; /* Small gap after logo */
+  object-fit: contain; /* Ensures logos scale without distortion */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+#education li:hover .affiliation-logo {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Experiences Timeline Styling */
+.timeline {
+  list-style-type: none;
+  padding-left: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 2px;
+  background-color: var(--accent-color);
+  opacity: 0.3;
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  padding-bottom: 15px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline li:before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--highlight-color);
+}
+
+.timeline li strong {
+  font-size: 16px;
+  color: var(--main-color);
 }
 
 /* Publications Styling */
@@ -515,21 +750,6 @@ a:hover, a:focus {
 .back-to-top:hover {
   background-color: var(--accent-hover);
   transform: translateY(-5px);
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 30px 0;
-  color: var(--text-secondary);
-  font-size: 14px;
-  margin-top: 50px;
-  border-top: 1px solid var(--border-color);
-  width: 100%;
-}
-
-.footer a {
-  color: var(--accent-color);
 }
 
 /* Animations */
@@ -708,12 +928,17 @@ a:hover, a:focus {
     text-decoration: underline;
   }
   
-  .publications li, .news li, .highlight {
+  .publications li, .news li, .highlight, #education li, .timeline li {
     box-shadow: none;
     break-inside: avoid;
   }
   
   .section::before {
     display: none;
+  }
+  
+  /* Reset section backgrounds for printing */
+  #about, #education, #experiences, #publications, #news {
+    background-color: transparent;
   }
 }
