@@ -525,18 +525,19 @@ a:hover, a:focus {
   color: var(--main-color);
 }
 
-/* Affiliation Logos in Education Section */
+/* Affiliation Logos in Education and Experiences Sections */
 .affiliation-logo {
-  width: 50px; /* Larger size */
-  height: 50px;
-  vertical-align: middle; /* Aligns logo with university name */
-  margin-left: 15px; /* Space between university name and logo */
+  width: 40px; /* Resized from 50px */
+  height: 40px; /* Resized from 50px */
+  vertical-align: middle; /* Aligns logo with university/company name */
+  margin-left: 15px; /* Space between name and logo */
   margin-right: 5px; /* Small gap after logo */
   object-fit: contain; /* Ensures logos scale without distortion */
   transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-#education li:hover .affiliation-logo {
+#education li:hover .affiliation-logo,
+.timeline li:hover .affiliation-logo {
   transform: scale(1.1); /* Slight zoom on hover */
 }
 
